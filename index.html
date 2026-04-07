@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Asif Ali – ML Engineer & AI Developer. Building intelligent systems with deep learning, LLMs, and agentic AI." />
+  <meta name="author" content="Asif Ali" />
+  <title>Asif Ali — AI & ML Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="scroll-progress"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo"><span class="br"></span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#goals">Goals</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <button id="theme-btn"><i class="fas fa-sun" id="theme-icon"></i></button>
+        <button id="burger"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <canvas id="canvas"></canvas>
+    <div class="hero">
+      <p class="eyebrow"><span class="dot"></span> Available for opportunities</p>
+      <h1>Asif <span class="glow">Ali</span></h1>
+      <p class="typed-line">
+        <span class="pre">I build </span><span id="typed"></span><span class="cur">|</span>
+      </p>
+      <p class="tagline">
+        Engineering intelligence — one model at a time.<br>
+        Turning raw data into systems that <em>think, learn &amp; act.</em>
+      </p>
+      <div class="btns">
+        <a href="#projects" class="btn primary"><i class="fas fa-rocket"></i> View Projects</a>
+        <a href="#contact"  class="btn ghost"><i class="fas fa-paper-plane"></i> Contact Me</a>
+        
+     
+    </div>
+    <div class="scroll-hint"><span>scroll</span><div class="sline"></div></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="sec">
+    <div class="wrap">
+      <div class="sh"><h2>About Me</h2><div class="hl"></div></div>
+      <div class="about-grid">
+        <div class="about-txt">
+          <p class="lead">I'm a Computer Science graduate from <strong>FAST-NUCES Islamabad</strong>, specialising in AI systems, machine learning, and agentic architectures. My work sits at the intersection of <em>deep learning research</em> and <em>real-world deployment</em>.</p>
+          <p>From building RAG pipelines and multi-agent systems to training video prediction models on UCF101 — I obsess over making AI practical, safe, and impactful. My internship at <strong>MTBC CareCloud</strong> sharpened my ability to ship production-grade AI features fast.</p>
+          <p>When I'm not training models I'm exploring agentic workflows, contributing to open-source tooling, and chasing the next breakthrough in computer vision.</p>
+          <div class="chips">
+            <span><i class="fas fa-brain"></i> Agentic AI</span>
+            <span><i class="fas fa-eye"></i> Computer Vision</span>
+            <span><i class="fas fa-database"></i> RAG Systems</span>
+            <span><i class="fas fa-network-wired"></i> Deep Learning</span>
+          </div>
+        </div>
+        <div class="about-side">
+          <div class="card edu">
+            <div class="edu-ico"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+              <h3>BS Computer Science</h3>
+              <p class="uni">FAST National University of computer &amp; Emerging Sciences</p>
+              <p class="loc"><i class="fas fa-map-marker-alt"></i> Islamabad, Pakistan</p>
+              <div class="bdgs">
+                <span class="bdg c">CGPA: 3.07 / 4.0</span>
+                <span class="bdg p">Graduate(2025)</span>
+              </div>
+            </div>
+          </div>
+          <div class="card links">
+            <p class="lbl">Find me online</p>
+            <a href="https://github.com/aliasif767" target="_blank" rel="noopener" class="sl">
+              <i class="fab fa-github"></i><span>github.com/aliasif767</span><i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="https://linkedin.com/in/asif-ali-006506298/" target="_blank" rel="noopener" class="sl">
+              <i class="fab fa-linkedin"></i><span>linkedin.com/in/asif-ali</span><i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="mailto:asifaali1917@gmail.com" class="sl">
+              <i class="fas fa-envelope"></i><span>asifaali1917@gmail.com</span><i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="sec alt">
+    <div class="wrap">
+      <div class="sh"><h2>Technical Skills</h2><div class="hl"></div></div>
+      <div class="skills-grid">
+        <div class="card">
+          <div class="sk-head"><span class="sk-ico"><i class="fas fa-code"></i></span><h3>Languages</h3></div>
+          <div class="bars">
+            <div class="br-row"><span>Python</span><div class="bar"><div class="fill" style="width:95%"></div></div><span>95%</span></div>
+            <div class="br-row"><span>C++</span><div class="bar"><div class="fill" style="width:80%"></div></div><span>80%</span></div>
+            <div class="br-row"><span>JavaScript</span><div class="bar"><div class="fill" style="width:72%"></div></div><span>72%</span></div>
+            <div class="br-row"><span>Go</span><div class="bar"><div class="fill" style="width:65%"></div></div><span>65%</span></div>
+            <div class="br-row"><span>Java</span><div class="bar"><div class="fill" style="width:60%"></div></div><span>60%</span></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sk-head"><span class="sk-ico"><i class="fas fa-brain"></i></span><h3>AI / ML Libraries</h3></div>
+          <div class="tags">
+            <span class="t hot">TensorFlow</span><span class="t hot">PyTorch</span>
+            <span class="t">Scikit-Learn</span><span class="t">OpenCV</span>
+            <span class="t">Keras</span><span class="t">Pandas</span><span class="t">NumPy</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sk-head"><span class="sk-ico"><i class="fas fa-robot"></i></span><h3>LLM / Agentic</h3></div>
+          <div class="tags">
+            <span class="t hot">LangChain</span><span class="t hot">LangGraph</span>
+            <span class="t hot">LangSmith</span><span class="t">LlamaIndex</span>
+            <span class="t">AutoGen</span><span class="t">OpenAI API</span>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sk-head"><span class="sk-ico"><i class="fas fa-tools"></i></span><h3>Tools &amp; DevOps</h3></div>
+          <div class="tags">
+            <span class="t">Git</span><span class="t">Docker</span><span class="t">Linux</span>
+            <span class="t">DVC</span><span class="t">MLflow</span><span class="t">n8n</span>
+            <span class="t">FastAPI</span><span class="t">Flask</span><span class="t">Django</span>
+            <span class="t">PostgreSQL</span><span class="t">MongoDB</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="sec">
+    <div class="wrap">
+      <div class="sh"><h2>Experience</h2><div class="hl"></div></div>
+      <div class="timeline">
+
+        <div class="tli">
+          <div class="tldot"><i class="fas fa-briefcase"></i></div>
+          <div class="card tlcard">
+            <div class="tltop">
+              <div><h3>AI Intern</h3><p class="org"><i class="fas fa-building"></i> MTBC CareCloud</p></div>
+              <span class="tdate">Apr – Jun 2025</span>
+            </div>
+            <ul class="tlul">
+              <li>Developed and deployed <strong>Agentic AI solutions</strong> to automate key business workflows.</li>
+              <li>Engineered multiple <strong>intelligent agents &amp; chatbots</strong>, boosting engagement and cutting support time.</li>
+              <li>Designed and integrated <strong>RAG applications</strong> for intelligent content retrieval and generation.</li>
+              <li>Collaborated cross-functionally to identify AI opportunities and deliver measurable impact.</li>
+            </ul>
+            <div class="tltags"><span>LangChain</span><span>LangGraph</span><span>RAG</span><span>FastAPI</span><span>OpenAI</span></div>
+          </div>
+        </div>
+
+        <div class="tli">
+          <div class="tldot"><i class="fas fa-flask"></i></div>
+          <div class="card tlcard">
+            <div class="tltop">
+              <div><h3>Research Assistant</h3><p class="org"><i class="fas fa-university"></i> FAST University Islamabad</p></div>
+              <span class="tdate">2023 – 2024</span>
+            </div>
+            <ul class="tlul">
+              <li>Supported <strong>academic &amp; industry-aligned AI research</strong> projects.</li>
+              <li>Implemented advanced <strong>data preprocessing, feature engineering</strong>, and model optimisation pipelines.</li>
+              <li>Improved model accuracy through rigorous experimentation and cross-functional collaboration.</li>
+            </ul>
+            <div class="tltags"><span>Python</span><span>Scikit-Learn</span><span>TensorFlow</span><span>Data Analysis</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="sec alt">
+    <div class="wrap">
+      <div class="sh"><h2>Projects</h2><div class="hl"></div></div>
+      <div class="proj-grid">
+
+        <div class="card proj">
+          <div class="ptop"><div class="pico"><i class="fas fa-ad"></i></div>
+            <a href="https://github.com/aliasif767" target="_blank" rel="noopener" class="ghbtn"><i class="fab fa-github"></i></a></div>
+          <h3>AdInsight</h3>
+          <p>Browser extension for video ad analysis with <strong>engagement tracking</strong>, demographic analysis, and real-time <strong>object detection</strong>.</p>
+          <div class="ptags"><span>Python</span><span>JavaScript</span><span>TensorFlow</span><span>PostgreSQL</span></div>
+        </div>
+
+        <div class="card proj feat">
+          <div class="fbadge">Featured</div>
+          <div class="ptop"><div class="pico"><i class="fas fa-film"></i></div>
+            <a href="https://github.com/aliasif767" target="_blank" rel="noopener" class="ghbtn"><i class="fab fa-github"></i></a></div>
+          <h3>Video Frame Prediction</h3>
+          <p>Deep learning models <strong>(ConvLSTM, PredRNN, Transformers)</strong> predicting future frames on <strong>UCF101</strong> for video synthesis &amp; scene prediction.</p>
+          <div class="ptags"><span>Python</span><span>TensorFlow</span><span>ConvLSTM</span><span>Transformers</span></div>
+        </div>
+
+        <div class="card proj">
+          <div class="ptop"><div class="pico"><i class="fas fa-cloud-sun"></i></div>
+            <a href="https://github.com/aliasif767" target="_blank" rel="noopener" class="ghbtn"><i class="fab fa-github"></i></a></div>
+          <h3>Environmental Pollution Predictor</h3>
+          <p><strong>ARIMA &amp; LSTM</strong> forecast weather &amp; pollution from <strong>OpenWeatherMap</strong> real-time data. Deployed with FastAPI + MLflow.</p>
+          <div class="ptags"><span>Python</span><span>PyTorch</span><span>DVC</span><span>MLflow</span><span>FastAPI</span></div>
+        </div>
+
+        <div class="card proj feat">
+          <div class="fbadge">Featured</div>
+          <div class="ptop"><div class="pico"><i class="fas fa-heartbeat"></i></div>
+            <a href="https://github.com/aliasif767" target="_blank" rel="noopener" class="ghbtn"><i class="fab fa-github"></i></a></div>
+          <h3>Virtual AI Doctor</h3>
+          <p>Agentic healthcare assistant that analyses symptoms, provides <strong>OTC advice</strong>, detects critical conditions, and <strong>auto-books appointments</strong>.</p>
+          <div class="ptags"><span>LangChain</span><span>LangGraph</span><span>OpenAI</span><span>FastAPI</span></div>
+        </div>
+
+      </div>
+      <div style="text-align:center;margin-top:40px">
+        <a href="https://github.com/aliasif767" target="_blank" rel="noopener" class="btn ghost">
+          <i class="fab fa-github"></i> All Projects on GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research" class="sec">
+    <div class="wrap">
+      <div class="sh"><h2>Research &amp; Experiments</h2><div class="hl"></div></div>
+      <div class="res-grid">
+        <div class="card rcard"><div class="rnum">01</div>
+          <h3>Spatiotemporal Video Prediction</h3>
+          <p>Benchmarked ConvLSTM, PredRNN, and Transformer architectures on UCF101. Evaluated SSIM and PSNR metrics across models.</p>
+          <div class="rtags"><span>Deep Learning</span><span>Computer Vision</span><span>UCF101</span></div>
+        </div>
+        <div class="card rcard"><div class="rnum">02</div>
+          <h3>Agentic AI for Healthcare</h3>
+          <p>Multi-agent architectures for medical triage combining symptom-graph traversal with LLM reasoning for safe case escalation.</p>
+          <div class="rtags"><span>Agentic AI</span><span>LangGraph</span><span>Healthcare AI</span></div>
+        </div>
+        <div class="card rcard"><div class="rnum">03</div>
+          <h3>RAG Pipeline Optimisation</h3>
+          <p>Explored chunking strategies, embedding models, and re-ranking to maximise retrieval precision in enterprise RAG deployments.</p>
+          <div class="rtags"><span>RAG</span><span>LlamaIndex</span><span>Vector DBs</span></div>
+        </div>
+        <div class="card rcard"><div class="rnum">04</div>
+          <h3>Pollution Forecasting — Hybrid Models</h3>
+          <p>Combined ARIMA with neural LSTM models to outperform single-method baselines on multi-horizon air quality forecasting.</p>
+          <div class="rtags"><span>Time Series</span><span>LSTM</span><span>ARIMA</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GOALS -->
+  <section id="goals" class="sec alt">
+    <div class="wrap">
+      <div class="sh"><h2>Future Goals</h2><div class="hl"></div></div>
+      <div class="goals-grid">
+       
+        <div class="card gcard"><div class="gico"><i class="fas fa-layer-group"></i></div><h3>Multimodal AI Systems</h3><p>Build production-grade agents that see, read, and reason across video, text, and data.</p></div>
+        <div class="card gcard"><div class="gico"><i class="fas fa-shield-alt"></i></div><h3>AI Safety &amp; Alignment</h3><p>Contribute to interpretability research — ensuring AI agents behave safely in critical domains.</p></div>
+        <div class="card gcard"><div class="gico"><i class="fab fa-github"></i></div><h3>Open-Source Contributions</h3><p>Release AI tools that help developers worldwide build intelligent applications easily.</p></div>
+        <div class="card gcard"><div class="gico"><i class="fas fa-stethoscope"></i></div><h3>AI for Healthcare in Pakistan</h3><p>Develop affordable, intelligent diagnostic AI solutions to expand access, enable early detection, and improve healthcare outcomes in underserved communities.</p></div>
+        <div class="card gcard">
+  <div class="gico"><i class="fas fa-graduation-cap"></i></div>
+  <h3>AI for Education in Pakistan</h3>
+  <p><p>Develop intelligent learning platforms to enhance accessibility, personalize education, and improve academic outcomes across diverse communities.</p></p>
+</div>
+        <div class="card gcard"><div class="gico"><i class="fas fa-microchip"></i></div><h3>Edge AI Deployment</h3><p>Optimise and quantise large models for edge devices and resource-constrained environments.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="sec">
+    <div class="wrap">
+      <div class="sh"><h2>Let's Connect</h2><p class="ssub">Have a project, idea, or just want to say hi?</p><div class="hl"></div></div>
+      <div class="contact-grid">
+        <div class="cinfo">
+          <div class="card citem"><i class="fas fa-envelope cico"></i><div><p class="clbl">Email</p><a href="mailto:asifaali1917@gmail.com">asifaali1917@gmail.com</a></div></div>
+          <div class="card citem"><i class="fab fa-github cico"></i><div><p class="clbl">GitHub</p><a href="https://github.com/aliasif767" target="_blank" rel="noopener">github.com/aliasif767</a></div></div>
+          <div class="card citem"><i class="fab fa-linkedin cico"></i><div><p class="clbl">LinkedIn</p><a href="https://linkedin.com/in/asif-ali-006506298/" target="_blank" rel="noopener">asif-ali-006506298</a></div></div>
+          <div class="card citem"><i class="fas fa-phone cico"></i><div><p class="clbl">Phone</p><a href="tel:+923209842379">+92-320-9842379</a></div></div>
+        </div>
+        <form class="card cform" id="cform" novalidate>
+          <div class="frow">
+            <div class="fg"><label>Your Name</label><input type="text" id="fn" placeholder="e.g. Sara Ahmed" required /></div>
+            <div class="fg"><label>Your Email</label><input type="email" id="fe" placeholder="sara@example.com" required /></div>
+          </div>
+          <div class="fg"><label>Subject</label><input type="text" id="fs" placeholder="What's this about?" /></div>
+          <div class="fg"><label>Message</label><textarea id="fm" rows="5" placeholder="Write your message here…" required></textarea></div>
+          <button type="submit" class="btn primary full" id="sbtn"><i class="fas fa-paper-plane"></i> Send Message</button>
+          <div id="fstatus" class="fstatus"></div>
+          <p class="fnote">Or email: <a href="mailto:asifaali1917@gmail.com">asifaali1917@gmail.com</a></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot">
+      <p class="flogo"><span class="br">[</span>asif.ali<span class="br">]</span></p>
+      <p>© 2025 Asif Ali · Built with <i class="fas fa-heart" style="color:#00d4ff"></i> &amp; Python</p>
+      <div class="flinks">
+        <a href="https://github.com/aliasif767" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/asif-ali-006506298/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:asifaali1917@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="totop" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>
