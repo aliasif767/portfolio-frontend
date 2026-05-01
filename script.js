@@ -128,7 +128,6 @@
   const secs  = document.querySelectorAll('section[id]');
 
   function upd() {
-    nav.classList.toggle('on', window.scrollY > 20);
     let cur = '';
     secs.forEach(s => { if (window.scrollY >= s.offsetTop - 100) cur = s.id; });
     links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
@@ -297,3 +296,223 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     g.style.top  = e.clientY + 'px';
   }, { passive: true });
 })();
+
+/* =============================================
+   12. PROJECT MODAL LOGIC
+   ============================================= */
+const PROJECT_DATA = {
+  iars: {
+    title: "IARS — Intelligent Agentic Recruitment System",
+    images: [
+      "demo-images/IARS-images/image-1.png",
+      "demo-images/IARS-images/image-2.png",
+      "demo-images/IARS-images/image-3.png",
+      "demo-images/IARS-images/image-4.png",
+      "demo-images/IARS-images/image-5.png"
+    ],
+    intro: "A state-of-the-art, fully automated AI recruitment pipeline designed to modernize the hiring process. By leveraging multi-agent AI systems, IARS acts as a 24/7 digital recruiter.",
+    problem: "Traditional recruitment faces inefficiency, human bias, slow response times, and data fragmentation. HR teams spend hours manually screening CVs, leading to inconsistent evaluation and loss of top talent.",
+    solution: "IARS provides an Agentic AI Solution that automates the entire recruitment lifecycle including autonomous monitoring, agentic parsing, intelligent ranking, and automated communication.",
+    features: [
+      "Real-time Email Watcher: Automatically detects and downloads CVs every 30 seconds.",
+      "Resume Parser: Extracts structured data (skills, experience, education) from PDF/DOCX.",
+      "JD Generator: Automatically creates professional job descriptions using AI.",
+      "Candidate Scorer: Performs deep semantic analysis to match candidate profiles.",
+      "Intelligent Decision Engine: Categorizes candidates into MATCH, MAYBE, or NO MATCH.",
+      "Automated Outreach: Integrated SMTP/IMAP system for personalized feedback.",
+      "Premium Dashboard: Real-time pipeline funnel visualization and activity feed."
+    ],
+    tech: {
+      backend: ["FastAPI", "Python", "MongoDB", "asyncio"],
+      frontend: ["HTML5", "Vanilla CSS3", "Vanilla JavaScript", "Chart.js"],
+      integrations: ["IMAP/SMTP", "PDF/DOCX Parsing", "Docker"]
+    }
+  },
+  desibots: {
+    title: "Desibots Hub — Unified AI Microservices Ecosystem",
+    images: [
+      "demo-images/desibots-images/image-1.png",
+      "demo-images/desibots-images/image-2.png",
+      "demo-images/desibots-images/image-3.png",
+      "demo-images/desibots-images/image-4.png",
+      "demo-images/desibots-images/image-5.png"
+    ],
+    intro: "A next-generation SaaS platform designed to centralize specialized AI assistants into a single, cohesive ecosystem. Instead of managing fragmented AI tools, Desibots provides a unified dashboard and a single WhatsApp interface for expert AI agents.",
+    problem: "Fragmented experience across multiple platforms, cost inefficiency of separate subscriptions, security risks from exposed endpoints, and lack of local context (e.g., Pakistani legal systems or local business workflows).",
+    solution: "A secure, centralized 'Bot Proxy' architecture featuring a unified React portal, a custom WhatsApp routing engine, and specialized microservices optimized for specific tasks using RAG and localized data.",
+    features: [
+      "Authenticated Dashboard: Secure JWT-based login with a modern, glassmorphic UI.",
+      "Secure Bot Proxy: AI services run on internal networks, accessible only through the authenticated main backend.",
+      "LawyerBot (Legal RAG): Expert legal assistant providing accurate references to local laws.",
+      "HisabBot (Finance & Audit): Intelligent accounting assistant for managing ledgers and financial reporting.",
+      "PakOrderBot (E-commerce): Streamlined bot for order management and inventory tracking.",
+      "WhatsApp Dispatcher: Custom routing engine to switch between AI agents within a single WhatsApp conversation.",
+      "SaaS Infrastructure: Tiered access (Free/Pro) and 'Pay-as-you-go' token billing system."
+    ],
+    tech: {
+      frontend: ["React.js (Vite)", "Vanilla CSS3", "State Management (Context API)"],
+      backend: ["Node.js & Express", "MongoDB", "JWT Auth", "Docker Compose"],
+      ai_layer: ["Python (FastAPI)", "Groq LPU (Low-latency Inference)", "LangChain", "Vector Databases"]
+    }
+  },
+  proctorai: {
+    title: "ProctorAI — Agentic Online Examination Monitoring System",
+    images: [
+      "demo-images/exam-monitoring-images/image-1.png",
+      "demo-images/exam-monitoring-images/image-2.png",
+      "demo-images/exam-monitoring-images/image-3.png",
+      "demo-images/exam-monitoring-images/image-4.png",
+      "demo-images/exam-monitoring-images/image-5.png",
+      "demo-images/exam-monitoring-images/image-6.png"
+    ],
+    intro: "A state-of-the-art, agentic online examination monitoring system designed to preserve academic integrity. It integrates advanced computer vision, biometric authentication, and real-time behavioral analysis to provide a secure environment for remote assessments.",
+    problem: "Scalability issues with manual proctoring, academic dishonesty (impersonation, unauthorized collaboration), inconsistent enforcement of rules, and prohibitive costs for human proctors.",
+    solution: "A fully automated, intelligent proctoring agent featuring biometric gatekeeping, real-time automated surveillance, risk-based auditing with violation logs, and an active agentic workflow for session management.",
+    features: [
+      "Biometric Identity Verification: FaceNet via DeepFace for 1:1 matching with registered student profiles.",
+      "Tab & Window Security: Detection of tab switching and loss of window focus during exams.",
+      "Multi-Monitor Detection: Extended screen and resolution monitoring to flag secondary display cheating.",
+      "Real-time Behavioral Monitoring: Gaze tracking, multi-face detection, and head pose estimation using OpenCV.",
+      "Dynamic Risk Scoring: Real-time risk level calculation (Low to Critical) based on violation severity.",
+      "WebSocket Event Streaming: Sub-second latency for instant violation response and session tracking.",
+      "Automated Attendance: Digital attendance marking and secure MongoDB logging for all events."
+    ],
+    tech: {
+      frontend: ["HTML5", "JavaScript (ES6+)", "Vanilla CSS3 (Glassmorphism)"],
+      backend: ["FastAPI (Python)", "WebSockets", "Asynchronous Thread Pooling"],
+      ai_cv: ["DeepFace", "FaceNet", "OpenCV", "MTCNN"],
+      database: ["MongoDB", "Uvicorn (ASGI)"]
+    }
+  },
+  doctor: {
+    title: "Virtual AI Doctor",
+    images: [],
+    intro: "An agentic healthcare assistant that provides intelligent triage and medical guidance.",
+    problem: "Limited access to immediate medical advice leads to delayed care or unnecessary ER visits for minor issues.",
+    solution: "A multi-agent architecture combining symptom-graph traversal with LLM reasoning for safe medical triage and escalation.",
+    features: [
+      "Symptom Analysis: Deep dive into patient symptoms using reasoning chains.",
+      "OTC Advice: Provide over-the-counter medication suggestions for minor cases.",
+      "Critical Condition Detection: Automatically escalate life-threatening symptoms.",
+      "Appointment Booking: Integrated scheduling with local clinics.",
+      "Multilingual Support: Communicate in local languages."
+    ],
+    tech: {
+      backend: ["LangChain", "LangGraph", "FastAPI"],
+      frontend: ["JavaScript", "CSS3"],
+      integrations: ["OpenAI API", "Twilio (for bookings)"]
+    }
+  }
+};
+
+(function () {
+  const modal = document.getElementById('proj-modal');
+  const body = document.getElementById('modal-body');
+  const close = document.getElementById('modal-close');
+  const cards = document.querySelectorAll('.proj.feat[data-project]');
+
+  const gModal = document.getElementById('gallery-modal');
+  const gBody  = document.getElementById('gallery-body');
+  const gClose = document.getElementById('gallery-close');
+
+  function openModal(id) {
+    const data = PROJECT_DATA[id];
+    if (!data) return;
+
+    let techHtml = '';
+    for (const [cat, tags] of Object.entries(data.tech)) {
+      techHtml += `
+        <div class="tech-cat">
+          <h4>${cat}</h4>
+          <div class="tech-tags">${tags.map(t => `<span>${t}</span>`).join('')}</div>
+        </div>
+      `;
+    }
+
+    body.innerHTML = `
+      <div class="modal-header">
+        <h2>${data.title}</h2>
+        ${data.images && data.images.length > 0 ? `
+          <button class="demo-btn" id="open-demo">
+            <i class="fas fa-play-circle"></i> Project Demo
+          </button>
+        ` : ''}
+      </div>
+      <div class="modal-section">
+        <h3><i class="fas fa-info-circle"></i> Introduction</h3>
+        <p>${data.intro}</p>
+      </div>
+      <div class="modal-section">
+        <h3><i class="fas fa-exclamation-triangle"></i> Problem Statement</h3>
+        <p>${data.problem}</p>
+      </div>
+      <div class="modal-section">
+        <h3><i class="fas fa-lightbulb"></i> Proposed Solution</h3>
+        <p>${data.solution}</p>
+      </div>
+      <div class="modal-section">
+        <h3><i class="fas fa-star"></i> Key Features</h3>
+        <ul class="modal-list">
+          ${data.features.map(f => `<li>${f}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="modal-section">
+        <h3><i class="fas fa-code"></i> Technology Stack</h3>
+        <div class="tech-grid">
+          ${techHtml}
+        </div>
+      </div>
+    `;
+
+    const demoBtn = document.getElementById('open-demo');
+    if (demoBtn) {
+      demoBtn.onclick = () => openGallery(data.images);
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function openGallery(images) {
+    if (!images || images.length === 0) return;
+    gBody.innerHTML = `
+      <div class="gallery-header">
+        <h3><i class="fas fa-images"></i> Project Showcase</h3>
+        <p>Scroll through the system screenshots and features.</p>
+      </div>
+      <div class="gallery-grid">
+        ${images.map((img, idx) => `
+          <div class="gallery-item">
+            <img src="${img}" alt="Demo Image ${idx + 1}">
+            <div class="gallery-info">Image ${idx + 1} of ${images.length}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+    gModal.classList.add('open');
+  }
+
+  function closeAll() {
+    modal.classList.remove('open');
+    gModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('.ghbtn')) return;
+      openModal(card.getAttribute('data-project'));
+    });
+  });
+
+  close.onclick = closeAll;
+  gClose.onclick = () => gModal.classList.remove('open');
+  
+  modal.onclick = (e) => { if (e.target === modal) closeAll(); };
+  gModal.onclick = (e) => { if (e.target === gModal) gModal.classList.remove('open'); };
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+})();
+
