@@ -87,11 +87,11 @@
   const el = document.getElementById('typed');
   if (!el) return;
   const phrases = [
-    'ML Engineers',
     'Agentic AI Systems',
-    'RAG Pipelines',
-    'Deep Learning Models',
-    'AI that actually works'
+    'Autonomous Coding Agents',
+    'Multi-Agent Workflows',
+    'Generative AI & RAG Pipelines',
+    'Production-Grade AI Solutions'
   ];
   let pi = 0, ci = 0, del = false;
 
@@ -301,8 +301,28 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
    12. PROJECT MODAL LOGIC
    ============================================= */
 const PROJECT_DATA = {
+  'ai-ide': {
+    title: "AI-IDE — Autonomous AI Software Engineering Platform",
+    images: [],
+    intro: "A production-grade, extensible AI-powered development environment providing autonomous coding agents with the foundational infrastructure to understand codebases, modify files, execute terminal commands, debug errors, and manage software projects end-to-end.",
+    problem: "Traditional coding assistants are limited to passive chat interfaces or snippet autocompletions. They lack real-time project awareness, execution environments, AST structural understanding, and the autonomy to inspect, debug, and run full developer workflows.",
+    solution: "A full-stack web IDE integrating Monaco Editor, an interactive PTY terminal streamed over WebSockets, Tree-sitter AST intelligence, and autonomous coding agents equipped with tool execution, real-time file watching via SSE (watchdog), and stateful task planning.",
+    features: [
+      "Autonomous Coding Agents: Agents equipped to understand codebases, modify files, execute commands, debug runtime errors, and iterate on solutions.",
+      "Full-Stack Web IDE: Integrated Monaco Editor with syntax highlighting, diff viewer, and real-time code intelligence.",
+      "Interactive PTY Terminal: Real-time bi-directional pseudoterminal over WebSockets for live command execution and process streaming.",
+      "Tree-sitter AST Intelligence: Deep syntax tree parsing, symbol navigation, and structural code comprehension for safe multi-file refactoring.",
+      "Real-time File Watcher: SSE-driven watchdog ensuring continuous synchronization between the filesystem, editor state, and agent actions.",
+      "Modern Reactive State: Powered by Zustand and TanStack Query for high-performance UI state management and caching."
+    ],
+    tech: {
+      backend: ["Python (FastAPI)", "WebSockets", "SSE (Watchdog)", "PTY Terminal", "Tree-sitter AST"],
+      frontend: ["TypeScript", "Monaco Editor", "React", "Zustand", "TanStack Query"],
+      agent_infrastructure: ["Autonomous Agent Loop", "Tool Execution Engine", "Codebase Indexing", "Process Management"]
+    }
+  },
   iars: {
-    title: "IARS — Intelligent Agentic Recruitment System",
+    title: "IARS — Agentic AI Recruitment & Assessment System",
     images: [
       "demo-images/IARS-images/image-1.png",
       "demo-images/IARS-images/image-2.png",
@@ -310,22 +330,51 @@ const PROJECT_DATA = {
       "demo-images/IARS-images/image-4.png",
       "demo-images/IARS-images/image-5.png"
     ],
-    intro: "A state-of-the-art, fully automated AI recruitment pipeline designed to modernize the hiring process. By leveraging multi-agent AI systems, IARS acts as a 24/7 digital recruiter.",
-    problem: "Traditional recruitment faces inefficiency, human bias, slow response times, and data fragmentation. HR teams spend hours manually screening CVs, leading to inconsistent evaluation and loss of top talent.",
-    solution: "IARS provides an Agentic AI Solution that automates the entire recruitment lifecycle including autonomous monitoring, agentic parsing, intelligent ranking, and automated communication.",
+    intro: "A state-of-the-art Agentic AI recruitment pipeline designed to automate the complete hiring lifecycle — from job description generation and LinkedIn posting to multi-factor candidate scoring and AI-proctored technical assessments.",
+    problem: "Traditional recruitment suffers from high manual screening overhead, human evaluation bias, slow response times, and fragmented candidate evaluation tools.",
+    solution: "An autonomous multi-agent recruitment architecture built with LangGraph that coordinates JD creation, LinkedIn job distribution, semantic resume parsing, candidate scoring against GitHub activity, and dynamic AI-proctored technical testing.",
     features: [
-      "Real-time Email Watcher: Automatically detects and downloads CVs every 30 seconds.",
-      "Resume Parser: Extracts structured data (skills, experience, education) from PDF/DOCX.",
-      "JD Generator: Automatically creates professional job descriptions using AI.",
-      "Candidate Scorer: Performs deep semantic analysis to match candidate profiles.",
-      "Intelligent Decision Engine: Categorizes candidates into MATCH, MAYBE, or NO MATCH.",
-      "Automated Outreach: Integrated SMTP/IMAP system for personalized feedback.",
-      "Premium Dashboard: Real-time pipeline funnel visualization and activity feed."
+      "Automated JD & LinkedIn Posting: Generates role-tailored job descriptions and automates LinkedIn distribution.",
+      "Agentic Resume Parsing: Extracts structured profiles, skills, experience, and education from PDF/DOCX resumes.",
+      "Semantic Candidate Matching: Uses embeddings and multi-factor scoring across skills, experience, projects, and GitHub activity for intelligent shortlisting.",
+      "AI-Proctored Technical Assessments: Dynamically generates role-specific MCQs and coding questions for candidates.",
+      "Candidate Behavior Monitoring: Real-time integrity tracking during assessments with automated response evaluation.",
+      "Automated Outreach & Communication: Dispatches personalized candidate emails, interview scheduling, and feedback via SMTP/IMAP.",
+      "Pipeline Dashboard: Visual funnel metrics, candidate leaderboards, and real-time activity streams."
     ],
     tech: {
+      agentic_workflow: ["LangGraph", "LangChain", "Multi-Agent Pipelines"],
       backend: ["FastAPI", "Python", "MongoDB", "asyncio"],
-      frontend: ["HTML5", "Vanilla CSS3", "Vanilla JavaScript", "Chart.js"],
-      integrations: ["IMAP/SMTP", "PDF/DOCX Parsing", "Docker"]
+      frontend: ["React", "HTML5", "Vanilla CSS3", "Chart.js"],
+      ai_evaluation: ["Semantic Embeddings", "Multi-Factor Scoring", "AI Proctoring Engine", "Dynamic MCQ Generator"]
+    }
+  },
+  proctorai: {
+    title: "ProctorAI — Agentic Multimodal Online Examination Monitoring System",
+    images: [
+      "demo-images/exam-monitoring-images/image-1.png",
+      "demo-images/exam-monitoring-images/image-2.png",
+      "demo-images/exam-monitoring-images/image-3.png",
+      "demo-images/exam-monitoring-images/image-4.png",
+      "demo-images/exam-monitoring-images/image-5.png",
+      "demo-images/exam-monitoring-images/image-6.png"
+    ],
+    intro: "An advanced, multimodal AI proctoring system that preserves academic integrity during remote online assessments by orchestrating parallel monitoring agents for computer vision, audio, and behavioral signals.",
+    problem: "Scalability limitations of human proctoring, undetected academic dishonesty (impersonation, mobile device usage, unauthorized collaboration), and lack of contextual violation reporting.",
+    solution: "A parallel multi-agent system powered by LangGraph that aggregates signals across facial biometrics, gaze, head pose, body movement, mobile detection, and voice activity into unified LLM-based integrity reports.",
+    features: [
+      "Biometric Identity Verification: FaceNet via DeepFace for 1:1 matching against registered student profiles.",
+      "Multimodal Behavioral Monitoring: Parallel agents for gaze tracking, head pose estimation, body movement, and mobile phone detection using OpenCV and MediaPipe.",
+      "Voice & Audio Activity Detection: Identifies background speech, whispering, and acoustic anomalies in real-time.",
+      "Tab & Screen Integrity: Detection of tab switching, window focus loss, and multi-monitor setups.",
+      "LangGraph Agent Orchestration: Aggregates real-time multimodal signals for consolidated decision-making.",
+      "LLM-Based Reporting: Generates structured, contextual exam integrity summaries with timestamped violation logs."
+    ],
+    tech: {
+      agentic_ai: ["LangGraph", "LangChain", "LLM-based Reporting"],
+      computer_vision: ["OpenCV", "DeepFace (FaceNet)", "MediaPipe", "MTCNN"],
+      backend: ["FastAPI (Python)", "WebSockets", "MongoDB", "Asynchronous Thread Pooling"],
+      frontend: ["JavaScript (ES6+)", "HTML5", "Vanilla CSS3 (Glassmorphism)"]
     }
   },
   desibots: {
@@ -353,35 +402,6 @@ const PROJECT_DATA = {
       frontend: ["React.js (Vite)", "Vanilla CSS3", "State Management (Context API)"],
       backend: ["Node.js & Express", "MongoDB", "JWT Auth", "Docker Compose"],
       ai_layer: ["Python (FastAPI)", "Groq LPU (Low-latency Inference)", "LangChain", "Vector Databases"]
-    }
-  },
-  proctorai: {
-    title: "ProctorAI — Agentic Online Examination Monitoring System",
-    images: [
-      "demo-images/exam-monitoring-images/image-1.png",
-      "demo-images/exam-monitoring-images/image-2.png",
-      "demo-images/exam-monitoring-images/image-3.png",
-      "demo-images/exam-monitoring-images/image-4.png",
-      "demo-images/exam-monitoring-images/image-5.png",
-      "demo-images/exam-monitoring-images/image-6.png"
-    ],
-    intro: "A state-of-the-art, agentic online examination monitoring system designed to preserve academic integrity. It integrates advanced computer vision, biometric authentication, and real-time behavioral analysis to provide a secure environment for remote assessments.",
-    problem: "Scalability issues with manual proctoring, academic dishonesty (impersonation, unauthorized collaboration), inconsistent enforcement of rules, and prohibitive costs for human proctors.",
-    solution: "A fully automated, intelligent proctoring agent featuring biometric gatekeeping, real-time automated surveillance, risk-based auditing with violation logs, and an active agentic workflow for session management.",
-    features: [
-      "Biometric Identity Verification: FaceNet via DeepFace for 1:1 matching with registered student profiles.",
-      "Tab & Window Security: Detection of tab switching and loss of window focus during exams.",
-      "Multi-Monitor Detection: Extended screen and resolution monitoring to flag secondary display cheating.",
-      "Real-time Behavioral Monitoring: Gaze tracking, multi-face detection, and head pose estimation using OpenCV.",
-      "Dynamic Risk Scoring: Real-time risk level calculation (Low to Critical) based on violation severity.",
-      "WebSocket Event Streaming: Sub-second latency for instant violation response and session tracking.",
-      "Automated Attendance: Digital attendance marking and secure MongoDB logging for all events."
-    ],
-    tech: {
-      frontend: ["HTML5", "JavaScript (ES6+)", "Vanilla CSS3 (Glassmorphism)"],
-      backend: ["FastAPI (Python)", "WebSockets", "Asynchronous Thread Pooling"],
-      ai_cv: ["DeepFace", "FaceNet", "OpenCV", "MTCNN"],
-      database: ["MongoDB", "Uvicorn (ASGI)"]
     }
   },
   doctor: {
